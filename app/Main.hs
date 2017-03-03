@@ -5,7 +5,8 @@ import Bracket
 
 main :: IO ()
 main = do agi <- prompt "Adjusted Gross Income: "
-          let tax = calculateTax (read agi :: Double)
+          deduct <- prompt "Deductions: "
+          let tax = calculateTax (read agi :: Double) (read deduct :: Double)
           putStrLn ("Calculated Tax: " ++ show tax)
 
 prompt :: String -> IO String

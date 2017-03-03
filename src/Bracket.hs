@@ -1,4 +1,4 @@
-module Bracket ( calculateTax ) where
+module Bracket ( calcTaxable ) where
 
 data Bracket = Bracket {  min :: Double
                        ,  rate :: Double
@@ -13,8 +13,8 @@ allBrackets = reverse
   , Bracket 416701 0.35
   , Bracket 418401 0.396 ]
 
-calculateTax :: Double -> Double
-calculateTax i = calcTax i 0 allBrackets
+calcTaxable :: Double -> Double
+calcTaxable i = calcTax i 0 allBrackets
 
 calcTax :: Double -> Double -> [Bracket] -> Double
 calcTax i t []     = t
