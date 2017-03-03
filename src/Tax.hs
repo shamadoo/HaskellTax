@@ -4,10 +4,13 @@ module Tax
   ) where
 
 import Bracket
+import TaxReturn
 
-calculateTax :: Double -> Double -> Double
+calculateTax :: Double -> Double -> TaxReturn
 
-calculateTax agi deduct = calcTaxable agi - deduct
+calculateTax agi deduct = TaxReturn agi taxable deduct result
+                          where taxable = calcTaxable agi
+                                result = taxable - deduct
 
 calculateWithholding :: Int -> Int -> Int
 

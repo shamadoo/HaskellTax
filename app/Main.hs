@@ -1,7 +1,7 @@
 module Main where
 
 import Tax
-import Bracket
+import TaxReturn
 
 main :: IO ()
 main = do agi <- prompt "Adjusted Gross Income: "
